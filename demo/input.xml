@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ota:OTA_HotelAvailRQ xmlns:ota="http://www.opentravel.org/OTA/2003/05" RequestedCurrency="EUR" PrimaryLangID="en">
+  <ota:POS>
+  <ota:Source>
+    <ota:RequestorID ID="WSRMXRDOO" MessagePassword="Pz_882bi"/>
+    <ota:RequestorOptions>
+      <ota:RequestorOption Name="action" Value="Hotel_MultiSingleAvailability_10.0" />
+      <ota:RequestorOption Name="targetHost" Value="nodeD1.test.webservices.amadeus.com" />
+      <ota:RequestorOption Name="endpoint" Value="1ASIWROORVZU" />
+    </ota:RequestorOptions>
+  </ota:Source>
+</ota:POS>
+<ota:AvailRequestSegments>
+  <ota:AvailRequestSegment>
+    <ota:StayDateRange End="2024-12-04T12:00:00Z" Start="2024-11-30T12:00:00Z"/>
+    <!-- Z means 'Zulu' offset, which is the same as UTC -->
+    <ota:RoomStayCandidates>
+      <ota:RoomStayCandidate Quantity="1" RPH="1">
+        <ota:GuestCounts>
+          <ota:GuestCount AgeQualifyingCode="10" Count="1"/><!-- AgeQualifyingCode=10 represents adults -->
+          <ota:GuestCount AgeQualifyingCode="8" Count="1"/><!-- AgeQualifyingCode=8 represents children -->
+        </ota:GuestCounts>
+      </ota:RoomStayCandidate>
+      <ota:RoomStayCandidate Quantity="1" RPH="2">
+        <ota:GuestCounts>
+          <ota:GuestCount AgeQualifyingCode="10" Count="2"/>
+        </ota:GuestCounts>
+      </ota:RoomStayCandidate>
+      <ota:RoomStayCandidate Quantity="1" RPH="3">
+        <ota:GuestCounts>
+          <ota:GuestCount AgeQualifyingCode="10" Count="3"/>
+          <ota:GuestCount AgeQualifyingCode="8" Count="1"/>
+        </ota:GuestCounts>
+      </ota:RoomStayCandidate>
+      <ota:RoomStayCandidate Quantity="1" RPH="4">
+        <ota:GuestCounts>
+          <ota:GuestCount AgeQualifyingCode="10" Count="1"/>
+        </ota:GuestCounts>
+      </ota:RoomStayCandidate>
+      <ota:RoomStayCandidate Quantity="1" RPH="5">
+        <ota:GuestCounts>
+          <ota:GuestCount AgeQualifyingCode="10" Count="1"/>
+          <ota:GuestCount AgeQualifyingCode="8" Count="2"/>
+        </ota:GuestCounts>
+      </ota:RoomStayCandidate>
+      <ota:RoomStayCandidate Quantity="1" RPH="6">
+        <ota:GuestCounts>
+          <ota:GuestCount AgeQualifyingCode="10" Count="3"/>
+        </ota:GuestCounts>
+      </ota:RoomStayCandidate>
+    </ota:RoomStayCandidates>
+    <ota:HotelSearchCriteria>
+      <ota:Criterion>
+        <ota:HotelRef HotelCityCode="NYC" HotelCode="AD_NYC07V" HotelCodeContext="amadeus"/>
+      </ota:Criterion>
+    </ota:HotelSearchCriteria>
+  </ota:AvailRequestSegment>
+</ota:AvailRequestSegments>
+</ota:OTA_HotelAvailRQ>

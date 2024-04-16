@@ -1,0 +1,30 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:test="xalan://com.roomex.xmltransform.XsltFunctions" xmlns:ota="http://www.opentravel.org/OTA/2003/05" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:oas="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:oas1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+<soapenv:Header>
+<add:MessageID>b3f4c276-3c4c-4956-99c7-0e77d541b39e</add:MessageID>
+<add:Action>Hotel_MultiSingleAvailability_10.0</add:Action>
+<add:To>https://nodeD1.test.webservices.amadeus.com/1ASIWROORVZU</add:To>
+<oas:Security>
+<oas:UsernameToken oas1:Id="UsernameToken-1">
+<oas:Username>WSRMXRDOO</oas:Username>
+<oas:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">V1NSTVhSRE9P</oas:Nonce>
+<oas:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">MWE5OGQ0ODc2NTM2N2JmNjZjMjYyYjA5OTc5ZjkzOGM4N2EzZDNlMA==</oas:Password>
+<oas1:Created>2024-04-16T23:51:32.965267800</oas1:Created>
+</oas:UsernameToken>
+</oas:Security>
+</soapenv:Header>
+<soapenv:Body>
+<availabilityRequest inputCurrency="EUR" inputLanguageCode="EN">
+<globalInputParameters>
+<hotelInputDetails chainCode="AD" hotelId="NYC07V" locationCode="NYC"/>
+<hotelStayDuration numberOfNights="4" startDate="2024-11-30"/>
+</globalInputParameters>
+<roomInputParameters>
+<rooms uniqueRoomGroups="3" numberOfChildren="4">
+<room numberOfRooms="3" numberOfAdults="1"/>
+<room numberOfRooms="1" numberOfAdults="2"/>
+<room numberOfRooms="2" numberOfAdults="3"/>
+</rooms>
+</roomInputParameters>
+</availabilityRequest>
+</soapenv:Body>
+</soapenv:Envelope>

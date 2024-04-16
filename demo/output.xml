@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:oas1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:oas="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                  xmlns:add="http://www.w3.org/2005/08/addressing">
+    <soapenv:Header>
+        <add:MessageID>1ed0d3da-50ea-448d-8e5f-b9e76eed820e</add:MessageID><!-- Random UUID as $MessageID -->
+        <add:Action>Hotel_MultiSingleAvailability_10.0</add:Action>
+        <add:To>https://nodeD1.test.webservices.amadeus.com/1ASIWROORVZU</add:To>
+        <oas:Security>
+            <oas:UsernameToken oas1:Id="UsernameToken-1">
+                <oas:Username>WSRMXRDOO</oas:Username>
+                <oas:Nonce
+                        EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">
+                    MWVkMGQzZGEtNTBlYS00NDhkLThlNWYtYjllNzZlZWQ4MjBl
+                </oas:Nonce><!-- Nonce is Base64($MessageID)-->
+                <!-- $ClearPassword is taken from ota:RequestorID/@MessagePassword -->
+                <oas:Password
+                        Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">
+                    NGU3NzBlZWRjZTg3Mjc0MzlkMDgyMTQzNzc4NmU1ZTIyNjA3ZWY0Mg==
+                </oas:Password>
+                <!-- Password is Base64(Sha1($Nonce + $Created + Sha1($ClearPassword))) -->
+                <oas1:Created>2024-03-27T10:00:00Z</oas1:Created><!-- Current datetime as $Created -->
+            </oas:UsernameToken>
+        </oas:Security>
+    </soapenv:Header>
+    <soapenv:Body>
+        <availabilityRequest inputCurrency="EUR" inputLanguageCode="EN">
+            <globalInputParameters>
+                <hotelInputDetails chainCode="AD" hotelId="NYC07V" locationCode="NYC"/>
+                <hotelStayDuration numberOfNights="4" startDate="2024-11-30"/>
+            </globalInputParameters>
+            <roomInputParameters>
+                <rooms uniqueRoomGroups="3" numberOfChildren="4">
+                    <room numberOfRooms="3" numberOfAdults="1"/>
+                    <room numberOfRooms="1" numberOfAdults="2"/>
+                    <room numberOfRooms="2" numberOfAdults="3"/>
+                </rooms>
+            </roomInputParameters>
+        </availabilityRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
